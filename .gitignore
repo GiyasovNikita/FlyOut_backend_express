@@ -1,0 +1,14 @@
+# Dependencies
+/node_modules
+
+# Compiled JavaScript
+/dist
+
+# TypeScript
+*.tsbuildinfo
+
+# Lock files
+/package-lock.json
+
+# Notes
+/notes.txt
