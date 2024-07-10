@@ -1,9 +1,15 @@
 import Knex from 'knex';
 import knexConfig from './src/config/knexfile';
 
+// Получение имени сида из аргументов командной строки
+const seedName = process.argv[2];
+
 const knex = Knex(knexConfig.development);
 
-knex.seed.run()
+// Запуск конкретного сида, если имя сида передано
+const seedRun = seedName ? knex.seed.run({ specific: seedName }) : knex.seed.run();
+
+seedRun
     .then(() => {
         console.log('Seeding complete!');
         process.exit(0);
